@@ -1,0 +1,32 @@
+--- a/README
++++ b/README
+@@ -86,8 +86,6 @@ contrib		A collection of user contributed scripts that may be useful.
+ db		Database schema and tools for generating DMARC reports based
+ 		upon accumulated data.
+ 
+-docs		A collection of RFCs and drafts related to opendmarc.
+-
+ libopendmarc	A library that implements the proposed DMARC standard.
+ 
+ libopendmarc/docs
+--- a/configure.ac
++++ b/configure.ac
+@@ -513,7 +510,6 @@ AC_OUTPUT([ Makefile
+ 	contrib/spec/Makefile
+ 		contrib/spec/opendmarc.spec
+ 	db/Makefile
+-	docs/Makefile
+ 	libopendmarc/Makefile
+ 	libopendmarc/tests/Makefile
+ 	libopendmarc/tests/testfiles/Makefile
+--- a/contrib/spec/opendmarc.spec.in
++++ b/contrib/spec/opendmarc.spec.in
+@@ -116,7 +116,7 @@ rm -rf %{buildroot}
+ 
+ %files
+ %defattr(-,root,root)
+-%doc INSTALL README RELEASE_NOTES docs/draft-dmarc-base-02.txt
++%doc INSTALL README RELEASE_NOTES
+ %doc db/README.schema db/schema.mysql
+ %config(noreplace) %{_sysconfdir}/%{name}.conf
+ %config(noreplace) %{_sysconfdir}/tmpfiles.d/%{name}.conf
